@@ -27,3 +27,23 @@
   border: 6px solid red;
   position: fixed;
 }
+
+h1 {
+  font-size: 30px;
+  font-weight: bolder;
+  text-align: center;
+  margin-top: 20px;
+}
+#pokedex img{
+  margin-left: 35px;
+}
+
+h4, p, ul {
+	margin-left: 20px;
+}
+h4 {
+	font-weight: bolder;
+}
+li, p {
+	margin-left: 20px;
+}
