@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignment 3:Weather</title>
+    <script type="text/javascript" src="apikeys.js"></script>
+    <script type="text/javascript" src="lib/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $.get("http://api.openweathermap.org/data/2.5/forecast/city?id=524901&APPID="+getPersonalApiKey()+"", function(res) {
+              console.log(res);
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>
