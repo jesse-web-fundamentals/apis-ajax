@@ -11,14 +11,34 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
-            $.get("http://api.openweathermap.org/data/2.5/forecast/city?id=524901&APPID="+getPersonalApiKey()+"", function(res) {
-              console.log(res);
+
+            $('form').submit(function(e) {
+                e.preventDefault();
+                var data = $(this).serializeArray()
+                // console.log(data);
+                data = data[0].value;
+                $.get("http://api.openweathermap.org/data/2.5/weather?q=" + data + "&&appid=" + getPersonalApiKey() + "", function(res) {
+                    // console.log(res);
+                    $('div').html("<h1>" + res.name + "</h1><h3>Temperature: </h3><p>" + res.main.temp + "</p>");
+                })
+
             })
+
+            // $.get("http://api.openweathermap.org/data/2.5/forecast/city?id=524901&APPID="+getPersonalApiKey()+"", function(res) {
+            //   console.log(res);
+            // })
+            // $.get("http://api.openweathermap.org/data/2.5/weather?q=London,uk&&appid="+getPersonalApiKey()+"", function(res) {
+            //   console.log(res);
+            // })
         })
     </script>
 </head>
 
 <body>
+    <form action="#" method="post">
+        <input type="text" name="search">
+        <input type="submit">
+    </form>
     <div></div>
 </body>
 
